@@ -1,0 +1,22 @@
+name: example-application
+
+services:
+  web:
+    image: traefik/whoami:v1.10
+    container_name: example-application-web
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "8080:80"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+    networks:
+      - default
+
+networks:
+  default:
+    name: example-application

@@ -1,0 +1,24 @@
+name: template-stack
+
+services:
+  template-service:
+    image: registry.example.com/platform/template-service:1.0.0
+    container_name: template-service
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      TZ: UTC
+    volumes:
+      - /opt/docker/data/template-stack/template-service:/var/lib/template-service
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+    networks:
+      - default
+
+networks:
+  default:
+    name: template-stack

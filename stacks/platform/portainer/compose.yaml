@@ -1,0 +1,26 @@
+name: portainer
+
+services:
+  portainer:
+    image: portainer/portainer-ce:2.39.4
+    container_name: portainer
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "9443:9443"
+      - "8000:8000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/docker/data/portainer:/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+    networks:
+      - default
+
+networks:
+  default:
+    name: portainer

@@ -1,0 +1,20 @@
+hosts:
+  - name: server-prod-01
+    environment: production
+    role: docker-host
+    address: server-prod-01.example.internal
+    os: ubuntu-server-lts
+    platform_root: /opt/docker
+    portainer_environment: server-prod-01
+    backup_profile: platform-standard
+    status: active
+
+  - name: server-dev-01
+    environment: development
+    role: docker-host
+    address: server-dev-01.example.internal
+    os: ubuntu-server-lts
+    platform_root: /opt/docker
+    portainer_environment: server-dev-01
+    backup_profile: platform-standard
+    status: active

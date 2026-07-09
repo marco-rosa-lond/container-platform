@@ -1,0 +1,17 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  repository:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate repository
+        run: scripts/validate-repository.sh

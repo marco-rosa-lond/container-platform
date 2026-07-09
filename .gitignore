@@ -1,0 +1,36 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor state
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Obsidian workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/app.json
+.obsidian/appearance.json
+.obsidian/hotkeys.json
+.obsidian/plugins/
+.obsidian/themes/
+
+# Local runtime output
+*.log
+*.tmp
+*.bak
+.env
+.env.*
+!.env.example
+
+# Archives and generated bundles
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Python validation cache
+__pycache__/
+.pytest_cache/
